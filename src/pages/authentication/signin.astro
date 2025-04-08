@@ -27,7 +27,7 @@ import Layout from "@/layouts/Layout.astro";
                             type="email"
                             name="email"
                             id="email"
-                            class="input input-bordered w-full mt-2"
+                            class="input input-bordered w-full mt-2 focus:ring ring-primary focus:border-primary focus:outline-none"
                             placeholder="name@company.com"
                             required
                         />
@@ -41,7 +41,7 @@ import Layout from "@/layouts/Layout.astro";
                             name="password"
                             id="password"
                             placeholder="••••••••"
-                            class="input input-bordered w-full mt-2"
+                            class="input input-bordered w-full mt-2 focus:ring ring-primary focus:border-primary focus:outline-none"
                             required
                         />
                     </div>
@@ -61,7 +61,7 @@ import Layout from "@/layouts/Layout.astro";
                             >
                         </div>
                         <a
-                            href="#"
+                            href="/authentication/forgot-password"
                             class="ml-auto link link-primary link-hover text-sm font-medium"
                             >Lost Password?</a
                         >
@@ -74,8 +74,9 @@ import Layout from "@/layouts/Layout.astro";
                     <div
                         class="text-sm font-medium text-gray-500 dark:text-gray-400"
                     >
-                        Not registered? <a class="link link-primary link-hover"
-                            >Create account</a
+                        Not registered? <a
+                            class="link link-primary link-hover"
+                            href="/authentication/signup">Create account</a
                         >
                     </div>
                 </form>

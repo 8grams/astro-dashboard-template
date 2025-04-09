@@ -13,9 +13,7 @@
 <script>
     const themeToggleBtn = document.getElementById("theme-toggle");
 
-    let event = new Event("dark-mode");
-
-    themeToggleBtn.addEventListener("click", function () {
+    themeToggleBtn?.addEventListener("click", function () {
         // if set via local storage previously
         if (localStorage.getItem("color-theme")) {
             if (localStorage.getItem("color-theme") === "light") {
@@ -36,7 +34,5 @@
                 localStorage.setItem("color-theme", "dark");
             }
         }
-
-        document.dispatchEvent(event);
     });
 </script>

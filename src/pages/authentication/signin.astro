@@ -1,4 +1,5 @@
 ---
+import { SITE_NAME } from "astro:env/client";
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -11,7 +12,7 @@ import Layout from "@/layouts/Layout.astro";
             class="flex items-center justify-center mb-8 text-2xl font-semibold lg:mb-10 dark:text-white"
         >
             <img src="/logo.svg" class="mr-4 h-11" alt="Logo" />
-            <span>Logoipsum</span>
+            <span>{SITE_NAME}</span>
         </a>
         <div class="w-full max-w-xl space-y-8 card shadow bg-white">
             <div class="card-body sm:p-8">

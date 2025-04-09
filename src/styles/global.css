@@ -1,6 +1,7 @@
 @import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap";
 
 @import "tailwindcss";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @plugin "daisyui" {
     theme:
@@ -30,6 +31,9 @@
     --radius-box: 0.5rem;
 
     --color-base-100: oklch(27.8% 0.033 256.848);
+    --color-base-200: oklch(37.3% 0.034 259.733);
+    --color-base-300: oklch(44.6% 0.03 256.802);
+    --color-base-content: #fff;
     --color-neutral: oklch(44.6% 0.03 256.802);
     --color-on-neutral: #fff;
 }

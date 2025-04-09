@@ -1,12 +1,12 @@
 <div class="tooltip tooltip-bottom" data-tip="Toggle dark mode">
     <button
         id="theme-toggle"
+        role="button"
         data-tooltip-target="tooltip-toggle"
-        type="button"
-        class="btn btn-square btn-ghost"
+        class="btn btn-square btn-ghost swap dark:swap-active"
     >
-        <i class="ti ti-sun-filled text-2xl dark:hidden"></i>
-        <i class="ti ti-moon-filled text-2xl hidden dark:inline"></i>
+        <i class="ti ti-sun-filled text-2xl swap-on"></i>
+        <i class="ti ti-moon-filled text-2xl swap-off"></i>
     </button>
 </div>
 
@@ -28,11 +28,11 @@
 
             // if NOT set via local storage previously
         } else {
-            if (document.documentElement.classList.contains("dark")) {
-                document.documentElement.classList.remove("dark");
+            if (document.documentElement.dataset.theme == "dark") {
+                document.documentElement.dataset.theme = "light";
                 localStorage.setItem("color-theme", "light");
             } else {
-                document.documentElement.classList.add("dark");
+                document.documentElement.dataset.theme = "dark";
                 localStorage.setItem("color-theme", "dark");
             }
         }

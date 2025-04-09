@@ -2,7 +2,11 @@
 
 @import "tailwindcss";
 
-@plugin "daisyui";
+@plugin "daisyui" {
+    theme:
+        light --default,
+        dark;
+}
 
 @plugin "daisyui/theme" {
     name: "light";
@@ -11,11 +15,22 @@
     --radius-field: 0.5rem;
     --radius-box: 0.5rem;
 
-    --color-base-100: oklch(98.5% 0.002 247.839);
     --color-primary: #1d4ed8;
     --color-primary-content: #fff;
+    --color-accent: oklch(55% 0.3 240);
+    --color-accent-content: #fff;
+    --color-neutral: oklch(12.9% 0.042 264.695);
+    --color-nutral-content: oklch(98.4% 0.003 247.858);
+}
+@plugin "daisyui/theme" {
+    name: "dark";
+    --color-base-100: oklch(27.8% 0.033 256.848);
 }
 
 @theme {
     --default-font-family: "Inter";
+    --color-base-bg: oklch(98.5% 0.002 247.839);
+}
+[data-theme="dark"] {
+    --color-base-bg: oklch(21% 0.034 264.665);
 }

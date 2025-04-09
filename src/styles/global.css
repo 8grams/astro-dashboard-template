@@ -24,7 +24,14 @@
 }
 @plugin "daisyui/theme" {
     name: "dark";
+
+    --radius-selector: 1rem;
+    --radius-field: 0.5rem;
+    --radius-box: 0.5rem;
+
     --color-base-100: oklch(27.8% 0.033 256.848);
+    --color-neutral: oklch(44.6% 0.03 256.802);
+    --color-on-neutral: #fff;
 }
 
 @theme {

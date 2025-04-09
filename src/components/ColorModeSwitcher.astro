@@ -1,0 +1,42 @@
+<div class="tooltip tooltip-bottom" data-tip="Toggle dark mode">
+    <button
+        id="theme-toggle"
+        data-tooltip-target="tooltip-toggle"
+        type="button"
+        class="btn btn-square btn-ghost"
+    >
+        <i class="ti ti-sun-filled text-2xl dark:hidden"></i>
+        <i class="ti ti-moon-filled text-2xl hidden dark:inline"></i>
+    </button>
+</div>
+
+<script>
+    const themeToggleBtn = document.getElementById("theme-toggle");
+
+    let event = new Event("dark-mode");
+
+    themeToggleBtn.addEventListener("click", function () {
+        // if set via local storage previously
+        if (localStorage.getItem("color-theme")) {
+            if (localStorage.getItem("color-theme") === "light") {
+                document.documentElement.dataset.theme = "dark";
+                localStorage.setItem("color-theme", "dark");
+            } else {
+                document.documentElement.dataset.theme = "light";
+                localStorage.setItem("color-theme", "light");
+            }
+
+            // if NOT set via local storage previously
+        } else {
+            if (document.documentElement.classList.contains("dark")) {
+                document.documentElement.classList.remove("dark");
+                localStorage.setItem("color-theme", "light");
+            } else {
+                document.documentElement.classList.add("dark");
+                localStorage.setItem("color-theme", "dark");
+            }
+        }
+
+        document.dispatchEvent(event);
+    });
+</script>

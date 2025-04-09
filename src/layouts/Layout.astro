@@ -20,19 +20,13 @@ import "../styles/global.css";
                 (!("color-theme" in localStorage) &&
                     window.matchMedia("(prefers-color-scheme: dark)").matches)
             ) {
-                document.documentElement.classList.add("dark");
+                document.documentElement.dataset.theme = "dark";
             } else {
-                document.documentElement.classList.remove("dark");
+                document.documentElement.dataset.theme = "light";
             }
         </script>
     </head>
-    <body
-        class:list={[
-            "scrollbar scrollbar-w-3 scrollbar-thumb-rounded-[0.25rem]",
-            "scrollbar-track-slate-200  scrollbar-thumb-gray-400",
-            "dark:scrollbar-track-gray-900 dark:scrollbar-thumb-gray-700",
-        ]}
-    >
+    <body class:list={["bg-base-bg"]}>
         <slot />
     </body>
 </html>

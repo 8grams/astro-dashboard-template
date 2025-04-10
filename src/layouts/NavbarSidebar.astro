@@ -3,13 +3,15 @@ import { SITE_NAME } from "astro:env/client";
 import AppsDropdown from "./AppsDropdown.astro";
 import NotificationsDropdown from "./NotificationsDropdown.astro";
 import ColorModeSwitcher from "@/components/ColorModeSwitcher.astro";
+import SearchInput from "@/components/SearchInput.astro";
+import ProfileDropdown from "./ProfileDropdown.astro";
 ---
 
 <nav class="fixed z-30 w-full bg-base-100 border-b border-base-300">
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
             <div class="flex items-center justify-start">
-                <button class="btn btn-square btn-ghost">
+                <button class="btn btn-square btn-ghost inline-flex lg:hidden">
                     <i class="ti ti-menu text-2xl"></i>
                 </button>
                 <a href="/" class="flex ml-2 md:mr-24">
@@ -20,7 +22,7 @@ import ColorModeSwitcher from "@/components/ColorModeSwitcher.astro";
                     >
                 </a>
 
-                <!-- <SearchInput /> -->
+                <SearchInput />
             </div>
 
             <div class="flex items-center text-base-content/80">
@@ -123,24 +125,7 @@ import ColorModeSwitcher from "@/components/ColorModeSwitcher.astro";
                         />
                     </div>
                     <!-- Dropdown menu -->
-                    <div
-                        popover
-                        class="dropdown w-52 rounded bg-base-100 shadow-sm dropdown-end"
-                        style="position-anchor: --anchor-profile;"
-                        id="profile-dropdown"
-                    >
-                        <div class="px-4 py-3 text-sm">
-                            <p>Neil Armstrong</p>
-                            <p><strong>neil@armstrong.id</strong></p>
-                        </div>
-                        <hr class="text-base-300" />
-                        <ul class="menu w-full">
-                            <li><a>Dashboard</a></li>
-                            <li><a>Settings</a></li>
-                            <li><a>Earnings</a></li>
-                            <li><a>Sign out</a></li>
-                        </ul>
-                    </div>
+                    <ProfileDropdown />
                 </div>
             </div>
         </div>

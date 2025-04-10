@@ -4,7 +4,8 @@ import { sidebar_navs } from "@/app/constant";
 
 <aside
     id="sidebar"
-    class="fixed top-0 -left-full lg:left-0 z-20 flex flex-col flex-shrink-0 w-64 h-full pt-16 font-normal duration-75 lg:flex transition-width"
+    class="fixed top-0 lg:left-0 z-20 flex flex-col flex-shrink-0 w-64 h-full pt-16 font-normal duration-75 lg:flex transition-width"
+    x-bind:class="sidebar ? 'left-0' : '-left-full'"
     aria-label="Sidebar"
 >
     <div
@@ -19,34 +20,51 @@ import { sidebar_navs } from "@/app/constant";
             ]}
         >
             <div class="flex-1 space-y-1 bg-base-100 divide-y divide-base-300">
-                <ul class="menu menu-lg gap-2 w-full text-base-content/80">
-                    <li>
-                        <form action="#" method="GET" class="lg:hidden">
-                            <label for="mobile-search" class="sr-only"
-                                >Search</label
+                <div>
+                    <div class="pb-1 px-2">
+                        <form
+                            action="#"
+                            method="GET"
+                            class="lg:hidden text-base-content/80"
+                        >
+                            <label
+                                class="input focus-within:outline-none focus-within:border-primary focus-within:ring ring-primary"
                             >
-                            <div class="relative">
-                                <div
-                                    class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
-                                >
-                                    <i class="ti ti-search text-2xl"></i>
-                                </div>
+                                <i class="ti ti-search text-xl"></i>
                                 <input
                                     type="text"
                                     name="email"
                                     id="mobile-search"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Search"
                                 />
-                            </div>
+                            </label>
                         </form>
-                    </li>
-                    {
-                        sidebar_navs.map((item) => (
-                            <li>
-                                {item.childrens ? (
-                                    <details>
-                                        <summary>
+                    </div>
+                    <ul class="menu menu-lg gap-2 w-full text-base-content/80">
+                        {
+                            sidebar_navs.map((item) => (
+                                <li>
+                                    {item.childrens ? (
+                                        <details>
+                                            <summary>
+                                                <i
+                                                    class:list={[
+                                                        item.icon,
+                                                        "text-2xl",
+                                                    ]}
+                                                />
+                                                <span>{item.name}</span>
+                                            </summary>
+                                            <ul class="gap-2 mt-2">
+                                                {item.childrens.map((child) => (
+                                                    <li>
+                                                        <a>{child.name}</a>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </details>
+                                    ) : (
+                                        <a href={item.link}>
                                             <i
                                                 class:list={[
                                                     item.icon,
@@ -54,27 +72,13 @@ import { sidebar_navs } from "@/app/constant";
                                                 ]}
                                             />
                                             <span>{item.name}</span>
-                                        </summary>
-                                        <ul class="gap-2 mt-2">
-                                            {item.childrens.map((child) => (
-                                                <li>
-                                                    <a>{child.name}</a>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </details>
-                                ) : (
-                                    <a href={item.link}>
-                                        <i
-                                            class:list={[item.icon, "text-2xl"]}
-                                        />
-                                        <span>{item.name}</span>
-                                    </a>
-                                )}
-                            </li>
-                        ))
-                    }
-                </ul>
+                                        </a>
+                                    )}
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
                 <ul class="menu menu-lg w-full gap-2 text-base-content/80">
                     <li>
                         <a>

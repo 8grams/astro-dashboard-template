@@ -11,8 +11,16 @@ import ProfileDropdown from "./ProfileDropdown.astro";
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
             <div class="flex items-center justify-start">
-                <button class="btn btn-square btn-ghost inline-flex lg:hidden">
-                    <i class="ti ti-menu text-2xl"></i>
+                <button
+                    class="btn btn-square btn-ghost lg:hidden swap swap-rotate text-base-content/80"
+                    x-on:click="sidebar=!sidebar"
+                >
+                    <input
+                        type="checkbox"
+                        x-bind:checked="sidebar?'checked':''"
+                    />
+                    <i class="ti ti-x text-2xl swap-on"></i>
+                    <i class="ti ti-menu text-2xl swap-off"></i>
                 </button>
                 <a href="/" class="flex ml-2 md:mr-24">
                     <img src="/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" />
@@ -27,15 +35,15 @@ import ProfileDropdown from "./ProfileDropdown.astro";
 
             <div class="flex items-center text-base-content/80">
                 <!-- Search mobile -->
-                <button
-                    id="toggleSidebarMobileSearch"
-                    type="button"
+                <label
+                    for="mobile-search"
                     class="btn btn-square btn-ghost lg:hidden"
+                    x-on:click="sidebar=true"
                 >
                     <span class="sr-only">Search</span>
                     <!-- Search icon -->
                     <i class="ti ti-search text-2xl"></i>
-                </button>
+                </label>
 
                 <!-- Dropdown menu -->
                 <div

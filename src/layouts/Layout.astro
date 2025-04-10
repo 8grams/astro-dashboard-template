@@ -14,6 +14,11 @@ import "../styles/global.css";
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
         />
+        <script
+            is:inline
+            defer
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+        ></script>
         <script is:inline>
             if (
                 localStorage.getItem("color-theme") === "dark" ||
@@ -26,7 +31,7 @@ import "../styles/global.css";
             }
         </script>
     </head>
-    <body class:list={["bg-base-bg"]}>
+    <body class:list={["bg-base-bg"]} x-data="{sidebar:false}">
         <slot />
     </body>
 </html>

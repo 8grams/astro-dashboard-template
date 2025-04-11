@@ -1,10 +1,13 @@
 ---
-import { SITE_NAME } from "astro:env/client";
 import AppsDropdown from "./AppsDropdown.astro";
 import NotificationsDropdown from "./NotificationsDropdown.astro";
 import ColorModeSwitcher from "@/components/ColorModeSwitcher.astro";
 import SearchInput from "@/components/SearchInput.astro";
 import ProfileDropdown from "./ProfileDropdown.astro";
+import { env } from "../utils/env";
+
+const SITE_NAME = env.SITE_NAME;
+
 ---
 
 <nav class="fixed z-30 w-full bg-base-100 border-b border-base-300">

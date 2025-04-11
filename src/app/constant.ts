@@ -7,7 +7,12 @@ export const sidebar_navs: SidebarNav[] = [
     link: "/",
   },
   {
-    name: "Layouts",
+    name: "Table",
+    icon: "ti ti-table-filled",
+    link: "/table",
+  },
+  {
+    name: "Dropdown",
     icon: "ti ti-layout-filled",
     link: "#",
     childrens: [

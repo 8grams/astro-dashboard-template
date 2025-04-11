@@ -4,44 +4,68 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @plugin "daisyui" {
-    theme:
-        light --default,
-        dark;
+  theme:
+    light --default,
+    dark;
 }
 
 @plugin "daisyui/theme" {
-    name: "light";
-    default: true;
-    --radius-selector: 1rem;
-    --radius-field: 0.5rem;
-    --radius-box: 0.5rem;
+  name: "light";
+  default: true;
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
 
-    --color-primary: #1d4ed8;
-    --color-primary-content: #fff;
-    --color-accent: oklch(55% 0.3 240);
-    --color-accent-content: #fff;
-    --color-neutral: oklch(12.9% 0.042 264.695);
-    --color-nutral-content: oklch(98.4% 0.003 247.858);
+  --color-primary: #1d4ed8;
+  --color-primary-content: #fff;
+  --color-accent: oklch(55% 0.3 240);
+  --color-accent-content: #fff;
+  --color-neutral: oklch(12.9% 0.042 264.695);
+  --color-nutral-content: oklch(98.4% 0.003 247.858);
 }
 @plugin "daisyui/theme" {
-    name: "dark";
+  name: "dark";
 
-    --radius-selector: 1rem;
-    --radius-field: 0.5rem;
-    --radius-box: 0.5rem;
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
 
-    --color-base-100: oklch(27.8% 0.033 256.848);
-    --color-base-200: oklch(37.3% 0.034 259.733);
-    --color-base-300: oklch(44.6% 0.03 256.802);
-    --color-base-content: #fff;
-    --color-neutral: oklch(44.6% 0.03 256.802);
-    --color-on-neutral: #fff;
+  --color-base-100: oklch(27.8% 0.033 256.848);
+  --color-base-200: oklch(37.3% 0.034 259.733);
+  --color-base-300: oklch(44.6% 0.03 256.802);
+  --color-base-content: #fff;
+  --color-neutral: oklch(44.6% 0.03 256.802);
+  --color-on-neutral: #fff;
 }
 
 @theme {
-    --default-font-family: "Inter";
-    --color-base-bg: oklch(98.5% 0.002 247.839);
+  --default-font-family: "Inter";
+  --color-base-bg: oklch(98.5% 0.002 247.839);
 }
 [data-theme="dark"] {
-    --color-base-bg: oklch(21% 0.034 264.665);
+  --color-base-bg: oklch(21% 0.034 264.665);
+}
+
+.apexcharts-tooltip {
+  @apply !bg-base-100 !shadow-lg !rounded-box;
+}
+
+.apexcharts-tooltip .apexcharts-tooltip-title {
+  @apply !py-2 !px-4 !bg-gray-100 !border-b !border-base-300;
+}
+
+.apexcharts-xaxistooltip {
+  @apply !border-0 !bg-base-100 !text-base-content !rounded-lg !shadow-lg;
+}
+
+.apexcharts-xaxistooltip-text {
+  @apply !font-medium !text-sm;
+}
+.apexcharts-tooltip-title {
+  @apply text-base-300;
+}
+
+.apexcharts-xaxistooltip:before,
+.apexcharts-xaxistooltip:after {
+  @apply !border-0;
 }

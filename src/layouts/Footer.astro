@@ -1,5 +1,7 @@
 ---
-import { SITE_NAME } from "astro:env/client";
+import { env } from "../utils/env";
+
+const SITE_NAME = env.SITE_NAME;
 ---
 
 <footer

@@ -1,21 +1,11 @@
 ---
+import TableHeader from "@/components/table/TableHeader.astro";
 import LayoutSidebar from "@/layouts/LayoutSidebar.astro";
 ---
 
 <LayoutSidebar>
   <div class="bg-base-100">
-    <div class="px-4 py-3">
-      <div class="breadcrumbs text-sm">
-        <ul>
-          <li><a>Home</a></li>
-          <li><a>E-Commerce</a></li>
-          <li>Products</li>
-        </ul>
-      </div>
-      <div class="mt-2">
-        <div class="text-2xl font-bold">All products</div>
-      </div>
-    </div>
+    <TableHeader />
     <div class="overflow-x-auto border-y border-base-300">
       <table class="table">
         <thead class="uppercase text-xs bg-base-200">

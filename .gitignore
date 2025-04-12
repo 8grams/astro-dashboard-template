@@ -10,6 +10,7 @@ node_modules/
 # logs
 npm-debug.log*
 yarn-debug.log*
+temp_auto_push.bat
 yarn-error.log*
 pnpm-debug.log*
 
@@ -22,3 +23,5 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+.gitignore
+branch_structure.json

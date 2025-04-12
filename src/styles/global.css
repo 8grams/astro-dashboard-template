@@ -12,9 +12,14 @@
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --radius-selector: 1rem;
+  --radius-selector: 0.25rem;
   --radius-field: 0.5rem;
-  --radius-box: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
 
   --color-primary: #1d4ed8;
   --color-primary-content: #fff;
@@ -26,9 +31,14 @@
 @plugin "daisyui/theme" {
   name: "dark";
 
-  --radius-selector: 1rem;
+  --radius-selector: 0.25rem;
   --radius-field: 0.5rem;
-  --radius-box: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
 
   --color-base-100: oklch(27.8% 0.033 256.848);
   --color-base-200: oklch(37.3% 0.034 259.733);

@@ -1,0 +1,168 @@
+---
+import LayoutSidebar from "@/layouts/LayoutSidebar.astro";
+---
+
+<LayoutSidebar>
+  <div class="px-4 pt-6">
+    <div class="breadcrumbs text-sm">
+      <ul>
+        <li><a>Home</a></li>
+        <li><a>E-Commerce</a></li>
+        <li>Products</li>
+      </ul>
+    </div>
+    <h1 class="text-2xl font-semibold mt-6">User settings</h1>
+  </div>
+  <div class="grid grid-cols-1 px-4 pt-6 xl:grid-cols-3 xl:gap-4">
+    <div class="col-span-full xl:col-auto">
+      <div
+        class="p-4 mb-4 bg-base-100 border border-base-300 rounded-box shadow 2xl:col-span-2 sm:p-6"
+      >
+        <div class="flex gap-4 flex-wrap">
+          <div>
+            <div class="avatar">
+              <div class="w-28 rounded-field">
+                <img src="/avatars/06.png" alt="User Avatar" />
+              </div>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <div class="text-xl font-semibold">Profile picture</div>
+              <p>JPG, GIF or PNG. Max size of 800K</p>
+            </div>
+            <div class="flex gap-2">
+              <button class="btn btn-primary">
+                <i class="ti ti-cloud-up text-2xl"></i>
+                <span>Upload picture</span></button
+              >
+              <button class="btn">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mb-4 2xl:col-span-2 bg-base-100 rounded-box p-4 sm:p-6 shadow border border-base-300"
+      >
+        <p class="text-xl font-semibold mb-4">Language & time</p>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend text-sm font-semibold"
+            >Select language</legend
+          >
+          <select
+            class="select w-full focus:outline-none focus:ring ring-primary focus:border-primary"
+          >
+            <option>English (US)</option>
+            <option>Indonesia</option>
+          </select>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend text-sm font-semibold"
+            >Select timezone</legend
+          >
+          <select
+            class="select w-full focus:outline-none focus:ring ring-primary focus:border-primary"
+          >
+            <option>GMT+7 Asia/Jakarta (WIB)</option>
+            <option>GMT+8 (WITA)</option>
+            <option>GMT+9 (WIT)</option>
+          </select>
+        </fieldset>
+      </div>
+    </div>
+    <div class="col-span-2">
+      <div
+        class="p-4 sm:p-6 bg-base-100 rounded-box border border-base-300 shadow"
+      >
+        <h3 class="mb-4 text-xl font-semibold">General information</h3>
+        <form action="#" class="grid sm:grid-cols-2 gap-6">
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-sm font-semibold"
+              >First Name</legend
+            >
+            <input
+              type="text"
+              class="input w-full focus:outline-none focus:ring ring-primary focus:border-primary"
+              placeholder="Bonnie"
+            />
+          </fieldset>
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-sm font-semibold"
+              >Last Name</legend
+            >
+            <input
+              type="text"
+              class="input w-full focus:outline-none focus:ring ring-primary focus:border-primary"
+              placeholder="Bonnie"
+            />
+          </fieldset>
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-sm font-semibold"
+              >Country</legend
+            >
+            <input
+              type="text"
+              class="input w-full focus:outline-none focus:ring ring-primary focus:border-primary"
+              placeholder="Bonnie"
+            />
+          </fieldset>
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-sm font-semibold">City</legend>
+            <input
+              type="text"
+              class="input w-full focus:outline-none focus:ring ring-primary focus:border-primary"
+              placeholder="Bonnie"
+            />
+          </fieldset>
+          <div>
+            <button class="btn btn-primary">Save all</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="grid xl:grid-cols-2 px-4">
+    <div
+      class="p-4 sm:p-6 bg-base-100 rounded-box border border-base-300 shadow"
+    >
+      <h3 class="text-xl font-semibold">Alerts & Notifications</h3>
+      <p class="mb-4 text-base-content/60 text-sm">
+        You can set up to get notifications
+      </p>
+      <div class="mb-4 divide-y divide-base-300">
+        <div class="flex justify-between items-center py-2">
+          <div>
+            <p class="text-lg font-semibold">Newsletter</p>
+            <p class="text text-base-content/60">
+              Get news, announcements, and product updates
+            </p>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              checked="checked"
+              class="toggle bg-base-300 border-base-300 checked:bg-primary text-primary-content"
+            />
+          </div>
+        </div>
+        <div class="flex justify-between items-center py-2">
+          <div>
+            <p class="text-lg font-semibold">New Messages</p>
+            <p class="text text-base-content/60">
+              Get news, announcements, and product updates
+            </p>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              class="toggle bg-base-300 border-base-300 checked:bg-primary text-primary-content"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-primary">Save all</button>
+      </div>
+    </div>
+  </div>
+</LayoutSidebar>

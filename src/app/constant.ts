@@ -12,6 +12,11 @@ export const sidebar_navs: SidebarNav[] = [
     link: "/table",
   },
   {
+    name: "Forms",
+    icon: "ti ti-forms",
+    link: "/forms",
+  },
+  {
     name: "Dropdown",
     icon: "ti ti-layout-filled",
     link: "#",
